@@ -1,9 +1,11 @@
-// config/db.config.js
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 export default {
-    HOST: 'localhost',
-    USER: 'root', // Your MySQL username
-    PASSWORD: 'Database123#', // Your MySQL password
-    DB: 'bookstore', // Your MySQL database
-    dialect: 'mysql',
-  };
-  
+  HOST: process.env.DB_HOST,
+  USER: process.env.DB_USER,
+  PASSWORD: process.env.DB_PASSWORD,
+  DB: process.env.DB_NAME,
+  dialect: process.env.DB_DIALECT,
+};
